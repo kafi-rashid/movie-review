@@ -1,0 +1,47 @@
+<header></header>
+
+<div class="content d-flex">
+  <div class="left-content">
+    <div class="trending">
+      <p class="section-title">Trending Movies <span class="view-all">View All</span></p>
+      <div class="movies">
+        <div class="movie" (click)="viewDetails(movie)" *ngFor="let movie of trending; let i = index;">
+          <div class="poster" [ngStyle]="{'background-image': 'url(' + movie.cover + ')'}"></div>
+          <p class="title">{{ movie.name }}</p>
+          <div class="rating">
+            <p><span class="stars"><span [ngStyle]="{'width': getRating(movie.rating) }"></span></span></p>
+            <p class="count">{{ movie.rating }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="theatre mt-4">
+      <p class="section-title">Popular in Theatres <span class="view-all">View All</span></p>
+      <div class="movies">
+        <div class="movie" (click)="viewDetails(movie)" *ngFor="let movie of theatre; let i = index;">
+          <div class="poster" [ngStyle]="{'background-image': 'url(' + movie.cover + ')'}"></div>
+          <p class="title">{{ movie.name }}</p>
+          <div class="rating">
+            <p><span class="stars"><span [ngStyle]="{'width': getRating(movie.rating) }"></span></span></p>
+            <p class="count">{{ movie.rating }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="sidebar">
+    <p class="section-title">All Time Popular</p>
+    <div class="movies movies-popular">
+      <div class="movie" (click)="viewDetails(movie)" *ngFor="let movie of popular; let i = index;">
+        <p class="title">{{ movie.name }}</p>
+        <div class="rating">
+          <p><span class="stars"><span [ngStyle]="{'width': getRating(movie.rating) }"></span></span></p>
+          <p class="count">{{ movie.rating }}</p>
+        </div>
+      </div>
+    </div>
+    <p class="view-all mt-3">View All</p>
+  </div>
+</div>

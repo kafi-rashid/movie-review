@@ -1,0 +1,51 @@
+<header></header>
+
+<div class="content movie movie-details">
+  <p class="title">{{ movie.name }}</p>
+
+  <div class="rating">
+    <p><span class="stars"><span [ngStyle]="{'width': getRating(movie.rating) }"></span></span></p>
+    <p class="count">{{ movie.rating }}</p>
+  </div>
+  
+  <div class="movie row">
+    <div class="poster col-md-3" [ngStyle]="{'background-image': 'url(' + movie.cover + ')'}"></div>
+    <div class="review col-md-9">
+      <p>Rate this movie</p>
+      <div class="form-group mb-2">
+        <label class="mb-1">Name</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="form-group mb-2">
+        <label class="mb-1">Rating</label>
+        <div class="rating">
+          <p><span class="stars"><span [ngStyle]="{'width': getRating(0) }"></span></span></p>
+        </div>
+      </div>
+      <div class="form-group mb-2">
+        <label class="mb-1">Review</label>
+        <textarea class="form-control"></textarea>
+      </div>
+      <button class="btn btn-sm btn-dark mt-2">Submit</button>
+    </div>
+  </div>
+
+  <p class="title mt-5 mb-3">Reviews</p>
+  <div class="user-reviews" *ngIf="movie.reviews && movie.reviews.length > 0">
+    <div class="user-review mb-4" *ngFor="let review of movie.reviews">
+      <p class="p-0 m-0"><strong>Author:</strong> {{ review.author }}</p>
+      <p class="p-0 m-0"><strong>Published On:</strong> {{ review.published_on | date: 'hh:mm a, dd MMMM YYYY' }}</p>
+      <p class="p-0 m-0"><strong>Review:</strong> {{ review.review }}</p>
+      <div class="d-flex align-items-center">
+        <p class="p-0 m-0"><strong>Rating:&nbsp;</strong></p>
+        <div class="rating m-0">
+          <p><span class="stars"><span [ngStyle]="{'width': getRating(review.rating) }"></span></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="user-reviews" *ngIf="!movie.reviews || movie.reviews.length === 0">
+    <p>No reviews yet</p>
+  </div>
+
+</div>

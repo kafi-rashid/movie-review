@@ -1,0 +1,39 @@
+.movie-details {
+  width: 70%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.movie-details .title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.movie-details .rating {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.movie-details .review {
+  display: flex;
+}
+
+.movie-details .poster {
+  flex: 1;
+  height: 400px;
+}
+
+.movie-details .review {
+  flex: 2;
+  flex-direction: column;
+  padding-left: 40px !important;
+}
+
+.movie-details label {
+  font-size: 14px;
+}
+
+.movie-details .btn {
+  width: 70px;
+}

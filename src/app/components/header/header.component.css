@@ -1,0 +1,20 @@
+.header {
+  padding: 10px 20px;
+  background-color: #e3c461;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header span {
+  font-family: 'Creepster';
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+.header button {
+  background-color: transparent;
+  border: none;
+  outline: none !important;
+  font-size: 14px;
+}

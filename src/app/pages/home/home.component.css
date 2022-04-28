@@ -1,0 +1,12 @@
+.left-content, .sidebar {
+  padding: 30px;
+}
+
+.left-content {
+  flex: 7;
+  border-right: thin solid #e3c461;
+}
+
+.sidebar {
+  flex: 2;
+}
